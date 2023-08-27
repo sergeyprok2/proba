@@ -204,7 +204,7 @@ async def process_gender_press(callback: CallbackQuery, state: FSMContext):
     await state.set_state(FSMFillForm.a)
 
 @dp.message(StateFilter(FSMFillForm.a),
-            lambda x: x.text.isdigit() and 4 <= int(x.text) <= 120)
+            lambda x: x.text.isdigit() and 4 <= int(x.text) <= 120000)
 async def process_age_sent(message: Message, state: FSMContext):
     # Cохраняем возраст в хранилище по ключу "age"
     await state.update_data(wes=message.text)
@@ -215,7 +215,7 @@ async def process_age_sent(message: Message, state: FSMContext):
 
 
 @dp.message(StateFilter(FSMFillForm.b),
-            lambda x: x.text.isdigit() and 4 <= int(x.text) <= 120)
+            lambda x: x.text.isdigit() and 4 <= int(x.text) <= 120000)
 async def process_age_sent(message: Message, state: FSMContext):
     # Cохраняем возраст в хранилище по ключу "age"
     await state.update_data(cena=message.text)
@@ -316,4 +316,5 @@ async def send_echo(message: Message):
 
 
 if __name__ == '__main__':
+    dp.startup.register(set_main_menu)
     dp.run_polling(bot)
