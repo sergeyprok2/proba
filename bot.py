@@ -3,7 +3,7 @@
 # print('Господи, помилуй.')
 # print('Слава Тебе, Бог наш, Слава Тебе.')
 print()
-import csv, json, os, sys, time, schedule, random
+import csv, json, os, sys, time, random
 # from crontab import CronTab
 from datetime import datetime
 # import pandas as pd
