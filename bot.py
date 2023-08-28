@@ -42,7 +42,7 @@ bot: Bot = Bot(token=BOT_TOKEN)
 dp: Dispatcher = Dispatcher(storage=storage)
 
 # Создаем "базу данных" пользователей
-user_dict = {}
+user_dict: dict[int, dict[str, str | int | bool]] = {}
 
 # Cоздаем класс, наследуемый от StatesGroup, для группы состояний нашей FSM
 class FSMFillForm(StatesGroup):
