@@ -1,4 +1,4 @@
-import callback as callback
+#  import callback as callback
 
 print('Господи, помилуй.')
 print('Слава Тебе, Бог наш, Слава Тебе.')
