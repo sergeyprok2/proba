@@ -1,7 +1,7 @@
 #  import callback as callback
 
-print('Господи, помилуй.')
-print('Слава Тебе, Бог наш, Слава Тебе.')
+# print('Господи, помилуй.')
+# print('Слава Тебе, Бог наш, Слава Тебе.')
 print()
 import csv, json, os, sys, time, schedule, random
 # from crontab import CronTab
