@@ -96,8 +96,8 @@ keyboard: ReplyKeyboardMarkup = ReplyKeyboardMarkup(
 # и предлагать перейти к заполнению анкеты, отправив команду /fillform
 @dp.message(CommandStart(), StateFilter(default_state))
 async def process_start_command(message: Message):
-    await message.answer(text='Этот бот демонстрирует работу FSM\n\n'
-                              'Чтобы перейти к заполнению анкеты - '
+    await message.answer(text='Этот бот тестовый\n\n'
+                              'Чтобы перейти дальше - '
                               'отправьте команду /fillform')
 
 
@@ -160,7 +160,7 @@ async def process_fillform_command(message: Message, state: FSMContext):
 #     await state.update_data(age=message.text)
 
     # Создаем объекты инлайн-кнопок
-    male_button = InlineKeyboardButton(text='цена за кг',
+    male_button = InlineKeyboardButton(text='Узнать цену за кг',
                                        callback_data='male')
     female_button = InlineKeyboardButton(text='Здесь пока ничего нет',
                                          callback_data='female')
