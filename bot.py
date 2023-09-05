@@ -162,9 +162,9 @@ async def process_fillform_command(message: Message, state: FSMContext):
     # Создаем объекты инлайн-кнопок
     male_button = InlineKeyboardButton(text='цена за кг',
                                        callback_data='male')
-    female_button = InlineKeyboardButton(text='Женский ♀',
+    female_button = InlineKeyboardButton(text='Здесь пока ничего нет',
                                          callback_data='female')
-    undefined_button = InlineKeyboardButton(text='🤷 Пока не ясно',
+    undefined_button = InlineKeyboardButton(text='Здесь пока ничего нет',
                                             callback_data='undefined_gender')
     # Добавляем кнопки в клавиатуру (две в одном ряду и одну в другом)
     keyboard: list[list[InlineKeyboardButton]] = [[male_button, female_button],
@@ -172,7 +172,7 @@ async def process_fillform_command(message: Message, state: FSMContext):
     # Создаем объект инлайн-клавиатуры
     markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
     # Отправляем пользователю сообщение с клавиатурой
-    await message.answer(text='Спасибо!\n\nУкажите ваш пол',
+    await message.answer(text='Привет еще раз!\n\nВыберите что вы хотите сделать',
                          reply_markup=markup)
     # Устанавливаем состояние ожидания выбора пола
     await state.set_state(FSMFillForm.fill_gender)
@@ -257,6 +257,7 @@ async def process_age_sent(message: Message, state: FSMContext):
                     f'цена товара: {user_dict[message.from_user.id]["cena"]}\n'
                     f'цена товара за 1 г: {round(r/y,2)}\n'
                     f'цена товара за 100 г: {round(r/y*100,2)}\n'
+                    f'цена товара за 500 г: {round(r/y*500,2)}\n'
                     f'цена товара за 1 кг: {round(r/y*1000,2)}\n')
     else:
         # Если анкеты пользователя в базе нет - предлагаем заполнить
